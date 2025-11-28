@@ -11,9 +11,21 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/complaints', require('./routes/complaints'));
-mongoose.connect(process.env.MONGO_URI)
+console.log('Environment Variables Check:');
+console.log('PORT:', process.env.PORT);
+console.log('MONGO_URI exists:', !!process.env.MONGO_URI);
+console.log('MONGO_URI type:', typeof process.env.MONGO_URI);
+console.log('Current Directory:', __dirname);
+
+// Fallback for debugging (DO NOT COMMIT REAL SECRETS)
+const mongoUri = process.env.MONGO_URI;
+
+mongoose.connect(mongoUri)
     .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.error('MongoDB Connection Error:', err));
+    .catch(err => {
+        console.error('MongoDB Connection Error:', err);
+        console.log('Attempted URI:', mongoUri);
+    });
 app.get('/', (req, res) => {
     res.send('Civic Issues API is running');
 });
