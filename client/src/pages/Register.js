@@ -28,7 +28,7 @@ const Register = () => {
                         <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
                         <input
                             type="text"
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 bg-white border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
@@ -38,7 +38,7 @@ const Register = () => {
                         <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
                         <input
                             type="email"
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 bg-white border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -48,7 +48,7 @@ const Register = () => {
                         <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
                         <input
                             type="password"
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -57,13 +57,12 @@ const Register = () => {
                     <div className="mb-6">
                         <label className="block text-gray-700 text-sm font-bold mb-2">Role</label>
                         <select
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 bg-white border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             value={role}
                             onChange={(e) => setRole(e.target.value)}
                         >
                             <option value="user">Citizen</option>
                             <option value="worker">Worker</option>
-                            <option value="admin">Admin</option>
                         </select>
                     </div>
                     <button
